@@ -54,13 +54,6 @@ function reset(){ //reset function resets all values and stylings
     scoreMultiplier(true);
 }
 
-function pulseOn(item, scale){
-    document.getElementById(item).style.scale = scale;
-}
-
-function pulseOff(item, scale){
-    document.getElementById(item).style.scale = scale;
-}
 
 function changeElementStyle(element, color, scale) {
     // Get the element by its id
