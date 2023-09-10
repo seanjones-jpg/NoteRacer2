@@ -58,6 +58,23 @@
 }
 
 
+
+#noteSymbol{
+    position: absolute;
+    left: -120%;
+    top: 38%
+}
+
+#notesRemaining{
+    position:absolute;
+    left: 50%;
+    top: calc(50% - var(--staff-height)/2 - 40px);
+    background-color: transparent;
+
+}
+
+
+
 .staff{
     position: absolute;
     top: calc(50% - var(--staff-height)/2);
@@ -95,12 +112,15 @@
 }
 
 #note{
+    position: relative;
+    left: calc(50% - 6px);
+}
+
+.note{
     width: 12px;
     height: 10px;
     background-color: var(--lowlight);
     border-radius: 50%;
-    position: relative;
-    left: calc(50% - 6px);
 }
 
 .noteGuess{

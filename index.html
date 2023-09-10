@@ -41,12 +41,15 @@
             <div class="line line-3"></div>
             <div class="line line-4"></div>
             <div class="line line-5"></div>
-            <div id="note"></div>
+            <div id="note" class="note"></div>
         </div>
 
         <input type="text" id="note-guess" class="gameplay noteGuess" onkeyup="checkInput()">
         <h1> <span id="noteSpan"></span> </h1>
-        <h1 class="notesRemaining gameplay"> Notes Remaining: <span id="notesRemainingSpan"></span>  </h1>
+        <div id="notesRemaining">
+            <div id="noteSymbol" class="note"></div>
+            <div class="notesRemaining"><p><span id="notesRemainingSpan"></span></p></div>
+        </div>
         
 
     </div>
