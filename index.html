@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="startScreen">
+        <h1 id="title">NOTE RACER</h1>
+        <label>Select Race Length</label> 
+            <select name="race-length" id="raceLength" class="dropdown"> 
+                <option value="25">Short: 25 notes</option> 
+                <option value="50">Medium: 50 notes</option> 
+                <option value="100">Long: 100 notes</option> 
+                <option value="200">Ultra Distance: 200 notes</option> 
+            </select>
+            <br>
+            <button onClick="startGame()" id="startButton" class="button">Play</button>
+            <button onClick="lightToDark()" class="button" id="darkmode">Dark Mode</button>
+            <button onClick="showInstructions(true)" class="button" id="instructionButton">How To</button>
+    </div>
+    <div id="instructions">
+        <h1 class="instructionTitle">How To Play</h1>
+        <p class="instructionParagraph">Select a race length with the dropdown</p><br>
+        <p class="instructionParagraph">Begin the race by clicking the Play button</p><br>
+        <p class="instructionParagraph">Enter the notes shown on the scale as they appear</p><br>
+        <p class="instructionParagraph">Streaks of correct notes will increase the note 
+            multiplier and lead to a higher score</p>
+        <button onClick="showInstructions(false)" id="exitButton" class="button">X</button>
+    </div>
+    <div id="gameDiv" class="gameplayContainer">     
+
+        <div id="staff" class="staff">
+            <h1 id="score">Score: <span id="gameScoreSpan"></span></h1>
+            <h1 id="multiplierBox">X<span id="multiplier"></span></h1>
+            <img src="treble-clef.png" id="treble-clef">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+            <div class="line line-4"></div>
+            <div class="line line-5"></div>
+            <div id="note"></div>
+        </div>
+
+        <input type="text" id="note-guess" class="gameplay noteGuess" onkeyup="checkInput()">
+        <h1> <span id="noteSpan"></span> </h1>
+        <h1 class="notesRemaining gameplay"> Notes Remaining: <span id="notesRemainingSpan"></span>  </h1>
+        
+
+    </div>
+    <div id="resultDiv" class="results">
+        <h1>Score: <span id="scoreSpan"></span> </h1>
+        <h1>Notes Hit: <span id="notesHitSpan"></span> </h1>
+        <h1>Time: <span id="timeSpan"></span> </h1>
+        <h1>Notes/min: <span id="notesPerMin"></span> </h1>
+        <button onClick="startGame()" id="replayButton" class="button">Play Again</button>
+        <button onClick="returnHome()" id="homeButton" class="button">Home</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

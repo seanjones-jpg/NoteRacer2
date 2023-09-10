@@ -1,0 +1,229 @@
+*{
+    color: var(--highlight);
+    font-weight: bold;
+    background-color:var(--background);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --line-offset: 10px;
+    --staff-height: 90px;
+    --staff-width: 200px;
+    --note-guess-width: 20px;
+    --note-guess-height: 15px;
+    --button-width: 100px;
+    --button-height: 50px;
+    --exit-button-dim: 30px;
+    --instructions-width: 400px;
+    --instructions-height: 300px;
+    --multiplier-border-1x: solid 2px red;
+    --multiplier-border-2x: solid 2PX orange;
+    --multiplier-border-3x: solid 2px green;
+    --multiplier-border-4x: solid 2px blue;
+    --multiplier-border-5x: solid 2px indigo;
+    --multiplier-border-6x: solid 2px violet;
+    --multiplier-border-7x: solid 2px #f37186;
+    --multiplier-border-8x: solid 2px #ff7700;
+    --background: darkolivegreen; 
+    --highlight: blanchedalmond;
+    --button-color: green;
+    --lowlight: black;
+    
+}
+
+.button:hover, .dropdown:hover{
+    cursor: pointer;
+}
+
+#darkMode{
+    padding-top: 20px;
+}
+#startButton{
+    display: inline-block;
+}
+
+
+.button{
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--button-color);
+    font-size: 8;
+    border-radius: 20px;
+    border: 2px solid var(--highlight);
+    padding: auto;
+}
+
+#gameDiv, #noteSpan, #resultDiv{
+    display:none;
+}
+
+
+.staff{
+    position: absolute;
+    top: calc(50% - var(--staff-height)/2);
+    left: calc(50% - var(--staff-width)/2);
+    width:var(--staff-width);
+    height: var(--staff-height);
+    background-color: var(--highlight);
+}
+
+.line{
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: var(--lowlight);
+}
+
+.line-1{  
+    top: calc(2*var(--line-offset));
+}
+
+.line-2{
+    top: calc(3*var(--line-offset));
+}
+
+.line-3{
+    top: calc(4*var(--line-offset));
+}
+
+.line-4{
+    top: calc(5*var(--line-offset));
+}
+
+.line-5{
+    top: calc(6*var(--line-offset));
+}
+
+#note{
+    width: 12px;
+    height: 10px;
+    background-color: var(--lowlight);
+    border-radius: 50%;
+    position: relative;
+    left: calc(50% - 6px);
+}
+
+.noteGuess{
+    margin-top: 20px;
+    text-align: center;
+    width: var(--note-guess-width);
+    height: var(--note-guess-height);
+    position: absolute;
+    top: calc(50% + var(--staff-height)/2);
+    left: calc(50% - var(--note-guess-width)/2); 
+}
+
+#treble-clef{
+    height: var(--staff-height);
+    width: auto;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: transparent;
+    z-index: 2;
+    color: var(--lowlight);
+}
+
+h1{
+    font-size: 15px;
+}
+
+#raceLength{
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid var(--highlight);
+    background-color: var(--button-color);
+    margin-bottom: 40px;
+}
+
+#startScreen{
+    text-align: center;
+}
+
+#instructions{
+    position: absolute;
+    top: calc(50% - var(--instructions-height)/2);
+    left: calc(50% - var(--instructions-width)/2);
+    width: var(--instructions-width);
+    height: var(--instructions-height);
+    background-color: var(--highlight);
+    border: 2px solid var(--lowlight);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 10px 2px var(--lowlight);
+    display: none;
+}
+
+.instructionTitle{
+    font-size: 20px;
+    text-decoration: underline;
+    background-color: var(--highlight);
+    color: var(--background);
+}
+
+#exitButton{
+    width: var(--exit-button-dim);
+    height: var(--exit-button-dim);
+    position: absolute;
+    top: calc(0% - var(--exit-button-dim)/2);
+    left: calc(100% - var(--exit-button-dim)/2);
+}
+
+.instructionParagraph{
+    font-size: 12px;
+    background-color: var(--highlight);
+    color: var(--background);
+    padding: none;
+    margin: none;
+}
+
+#score{
+    position: absolute;
+    top: -30%;
+    left: -95px;
+    width: 100px;
+    border-radius: 10px;
+    border: solid 2px var(--highlight);
+    background-color: var(--button-color);
+    box-shadow: 0px 2px 5px 2px var(--button-color);
+    word-wrap: none;
+    z-index: 2;
+    padding: 5px;
+}
+
+#multiplierBox{
+    text-align: center;
+    position: absolute;
+    top: -30%;
+    left: 95%;
+    width: 20px;
+    border-radius: 10px;
+    border: solid 2px var(--highlight);
+    background-color: var(--button-color);
+    box-shadow: 0px 2px 5px 2px var(--button-color);
+    word-wrap: none;
+    z-index: 2;
+    padding: 5px;
+}
+
+#multiplier{
+    border: solid 2px var(--button-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--button-color);
+}
+
+#multiplier, #gameScoreSpan{
+    background-color: var(--button-color);
+}
+
+#title{
+    font-size: 50px;
+}
+
+.results{
+    text-align: center;
+    margin-top: 20%;
+}
+
